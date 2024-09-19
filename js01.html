@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórmulas Matemáticas</title>
+</head>
+<body>
+    <h1>Fórmula Matemática</h1>
+</body>
+
+<script>
+
+    var num1 = parseFloat(prompt("Digite o primeiro número:"));
+    var num2 = parseFloat(prompt("Digite o segundo número:"));
+
+    var soma = num1 + num2;
+    var sub = num1 - num2;
+    var multp = num1 * num2;
+    var divd = num1 / num2;
+    var exp = Math.pow(num1, num2);
+
+    document.write("Primeiro número digitado: ", num1 + "<br>");
+    document.write("Segundo número digitado: ", num2 + "<br>");
+    document.write("<br>");
+    document.write("Soma: ", soma + "<br>");
+    document.write("Subtração: ", sub + "<br>");
+    document.write("Multiplicação: ", multp + "<br>");
+    document.write("Divisão: ", divd.toFixed(3) + "<br>");
+    document.write("Potência: ", exp);
+
+</script>
+</html>
