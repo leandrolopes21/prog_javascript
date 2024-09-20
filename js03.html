@@ -3,11 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calcular IMC</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: lightgray;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 10px;
+        }
+
+        h3 {
+            margin-top: 10px;
+        }
+
+        table {
+
+            border-collapse: collapse; /* Retira o espaçamento interno entre bordas */
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* caption {
+            width: 200px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2em;
+            margin: auto;
+            padding: 50px;
+        }*/
+
+        th, td {
+            border: 1px solid black;
+            padding: 0px 30px;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgb(185, 168, 168);
+        }
+
+        div#conteiner {
+            overflow-x: auto;
+        }
+
+        div > p {
+            width: 200px;
+            margin: 10px auto;
+            border: 1px solid black;
+        }
+
+    </style>
+
+    <title>Calculo do IMC</title>
 </head>
 <body>
-    <h1>Vamos caulcular o IMC</h1>
+    <h1>Vamos calcular o IMC</h1>
     <h3>IMC = peso / altura²</h3>
+
+    <div id="conteiner">
+        <table>
+            <tr>
+                <th>IMC</th>
+                <th>Classificação</th>
+                <th>Grau de Obesidade</th>
+            </tr>
+            <tr>
+                <td>Menor que 18,5</td>
+                <td>Magreza</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Entre 18,5 e 24,9</td>
+                <td>Normal</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Entre 25,0 e 29,9</td>
+                <td>Sobrepeso</td>
+                <td>I</td>
+            </tr>
+            <tr>
+                <td>Entre 30,0 e 39,9</td>
+                <td>Obesidade</td>
+                <td>II</td>
+            </tr>
+            <tr>
+                <td>Maior que 40,0</td>
+                <td>Obesidade Grave</td>
+                <td>III</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <p>Seu IMC é</p>
+    </div>
 </body>
 
 <script>
@@ -18,5 +114,6 @@
     var imc = peso / (altura * altura);
 
     document.write("Seu IMC é: ", imc.toFixed(2));
+
 </script>
 </html>
