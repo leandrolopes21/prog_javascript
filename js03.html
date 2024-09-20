@@ -102,18 +102,30 @@
         </table>
     </div>
     <div>
-        <p>Seu IMC é</p>
+        <p id="resultado">Seu IMC é</p>
     </div>
 </body>
 
 <script>
+
+    var nome = window.prompt('Qual é seu nome?');
     
     var peso = parseFloat(prompt("Digite seu peso:"));
     var altura = parseFloat(prompt("Digite sua altura:"));
 
-    var imc = peso / (altura * altura);
+    /*var imc = peso / (altura * altura);*/
+    
+    var imc = calcule(peso, altura);
 
-    document.write("Seu IMC é: ", imc.toFixed(2));
+    function calcule(peso, altura)
+    {
+        var resultado = 0;
+        resultado = peso / (altura * altura);
+        return resultado;
+    }
+
+    document.write("Olá ", nome, "!" + "<br>");
+    document.write("Seu IMC é: ", resultado.toFixed(2));
 
 </script>
 </html>
