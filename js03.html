@@ -32,14 +32,6 @@
             margin-right: auto;
         }
 
-        /* caption {
-            width: 200px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 1.2em;
-            margin: auto;
-            padding: 50px;
-        }*/
-
         th, td {
             border: 1px solid black;
             padding: 0px 30px;
@@ -53,7 +45,7 @@
             overflow-x: auto;
         }
 
-        div > p {
+        div#exibe_resultado {
             width: 200px;
             margin: 10px auto;
             border: 1px solid black;
@@ -101,34 +93,29 @@
             </tr>
         </table>
     </div>
-    <div>
-        <p id="resultado">Seu IMC é</p>
-    </div>
+    <div id="exibe_resultado">Seu IMC é = </div>
 </body>
 
-<script>
+    <script type="text/javascript">
 
-    var nome = window.prompt('Qual é seu nome?');
-    
-    var peso = parseFloat(prompt("Digite seu peso:"));
-    var altura = parseFloat(prompt("Digite sua altura:"));
+        var nome = window.prompt('Qual é seu nome?');
 
-    /*var imc = peso / (altura * altura);*/
-    
-    var imc = calcule(peso, altura);
+        alert("Olá " + nome + "! Vamos começar!");
+        
+        var peso = parseFloat(prompt("Digite seu peso:"));
+        var altura = parseFloat(prompt("Digite sua altura:"));
+        
+        var imc = calcule(peso, altura);
 
-    /* alert('Olá ' + nome);
-    alert('Seu IMC é: ' + imc); */
+        var divLocal = document.getElementById('exibe_resultado');
+        divLocal.innerHTML += imc.toFixed(2);
 
-    function calcule(peso, altura)
-    {
-        var resultado = 0;
-        resultado = peso / (altura * altura);
-        return resultado;
-    }
+        function calcule(peso, altura)
+        {
+            var resultado = 0;
+            resultado = peso / (altura * altura);
+            return resultado;
+        }
 
-    document.write("Olá " + nome + "!" + "<br>");
-    document.write("Seu IMC é: " + imc.toFixed(2));
-
-</script>
+    </script>
 </html>
